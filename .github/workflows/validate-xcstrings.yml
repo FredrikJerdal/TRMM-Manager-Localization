@@ -13,10 +13,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "15.4"
+
       - name: Show Xcode version
         run: xcodebuild -version
 
       - name: Validate string catalog
         run: |
           set -euo pipefail
-          xcrun xcstrings validate "Localization/Localizable.xcstrings"
+          if xcrun --find xcstrings >/dev/null 2>&1; then
+            xcstrings_path="$(xcrun --find xcstrings)"
+          else
+            echo "xcstrings not found in this Xcode installation." >&2
+            exit 1
+          fi
+          "$xcstrings_path" validate "Localization/Localizable.xcstrings"
