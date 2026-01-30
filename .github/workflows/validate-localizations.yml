@@ -1,0 +1,130 @@
+name: Validate localizations
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate-localizations:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect duplicate keys and missing/empty translations
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import sys
+          from collections import defaultdict
+
+          path = "Localization/Localizable.xcstrings"
+          try:
+            raw = open(path, "r", encoding="utf-8").read()
+          except FileNotFoundError:
+            print(f"File not found: {path}", file=sys.stderr)
+            sys.exit(1)
+
+          duplicates = []
+
+          def no_duplicates_object_pairs_hook(pairs):
+            obj = {}
+            seen = set()
+            for k, v in pairs:
+              if k in seen:
+                duplicates.append(k)
+              seen.add(k)
+              obj[k] = v
+            return obj
+
+          try:
+            data = json.loads(raw, object_pairs_hook=no_duplicates_object_pairs_hook)
+          except json.JSONDecodeError as exc:
+            print(f"Invalid JSON: {exc}", file=sys.stderr)
+            sys.exit(1)
+
+          if duplicates:
+            dup_counts = defaultdict(int)
+            for k in duplicates:
+              dup_counts[k] += 1
+            print("Duplicate JSON keys detected:")
+            for k, count in sorted(dup_counts.items()):
+              print(f"  {k} (x{count + 1})")
+            sys.exit(1)
+
+          strings = data.get("strings", {})
+          if not isinstance(strings, dict):
+            print("Invalid .xcstrings structure: 'strings' is not an object.", file=sys.stderr)
+            sys.exit(1)
+
+          locales = set()
+          source_language = data.get("sourceLanguage")
+          if isinstance(source_language, str) and source_language:
+            locales.add(source_language)
+
+          for entry in strings.values():
+            locs = entry.get("localizations", {}) if isinstance(entry, dict) else {}
+            if isinstance(locs, dict):
+              locales.update(locs.keys())
+
+          def extract_values(localization):
+            values = []
+            if not isinstance(localization, dict):
+              return values
+            unit = localization.get("stringUnit")
+            if isinstance(unit, dict):
+              val = unit.get("value")
+              if isinstance(val, str):
+                values.append(val)
+            variations = localization.get("variations")
+            if isinstance(variations, dict):
+              for _, var_group in variations.items():
+                if not isinstance(var_group, dict):
+                  continue
+                for _, var in var_group.items():
+                  values.extend(extract_values(var))
+            return values
+
+          missing = []
+          empty = []
+
+          for key, entry in strings.items():
+            if not isinstance(entry, dict):
+              continue
+            if entry.get("shouldTranslate") is False:
+              continue
+            locs = entry.get("localizations", {})
+            if not isinstance(locs, dict):
+              locs = {}
+            for locale in sorted(locales):
+              loc = locs.get(locale)
+              if loc is None:
+                missing.append((key, locale))
+                continue
+              values = extract_values(loc)
+              if not values:
+                missing.append((key, locale))
+                continue
+              if all(isinstance(v, str) and v.strip() == "" for v in values):
+                empty.append((key, locale))
+
+          if missing or empty:
+            if missing:
+              print("Missing translations:")
+              for key, locale in missing[:200]:
+                print(f"  {locale}: {key}")
+              if len(missing) > 200:
+                print(f"  ... and {len(missing) - 200} more")
+            if empty:
+              print("Empty translations:")
+              for key, locale in empty[:200]:
+                print(f"  {locale}: {key}")
+              if len(empty) > 200:
+                print(f"  ... and {len(empty) - 200} more")
+            sys.exit(1)
+
+          print("Localization validation passed.")
+          PY
