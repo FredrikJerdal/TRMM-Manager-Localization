@@ -16,7 +16,7 @@ jobs:
       - name: Select Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: "16.4"
+          xcode-version: "26.2.0"
 
       - name: Show Xcode version
         run: xcodebuild -version
@@ -26,6 +26,8 @@ jobs:
           set -euo pipefail
           if xcrun --find xcstrings >/dev/null 2>&1; then
             xcstrings_path="$(xcrun --find xcstrings)"
+          elif xcodebuild -find xcstrings >/dev/null 2>&1; then
+            xcstrings_path="$(xcodebuild -find xcstrings)"
           else
             echo "xcstrings not found in this Xcode installation." >&2
             exit 1
