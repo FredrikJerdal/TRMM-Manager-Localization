@@ -34,8 +34,8 @@ jobs:
           elif [ -x "$DEVELOPER_DIR/usr/bin/xcstrings" ]; then
             xcstrings_path="$DEVELOPER_DIR/usr/bin/xcstrings"
           else
-            echo "xcstrings not found; falling back to plutil lint." >&2
-            plutil -lint "Localization/Localizable.xcstrings"
+            echo "xcstrings not found; falling back to JSON lint." >&2
+            python3 -m json.tool "Localization/Localizable.xcstrings" >/dev/null
             exit 0
           fi
           "$xcstrings_path" validate "Localization/Localizable.xcstrings"
