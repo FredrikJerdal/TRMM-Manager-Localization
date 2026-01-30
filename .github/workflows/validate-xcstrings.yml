@@ -34,7 +34,8 @@ jobs:
           elif [ -x "$DEVELOPER_DIR/usr/bin/xcstrings" ]; then
             xcstrings_path="$DEVELOPER_DIR/usr/bin/xcstrings"
           else
-            echo "xcstrings not found in this Xcode installation." >&2
-            exit 1
+            echo "xcstrings not found; falling back to plutil lint." >&2
+            plutil -lint "Localization/Localizable.xcstrings"
+            exit 0
           fi
           "$xcstrings_path" validate "Localization/Localizable.xcstrings"
