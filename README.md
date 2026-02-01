@@ -21,7 +21,6 @@ Localization resources for Tactical RMM Manager. Use this repo to add or update 
 - Do not translate strings explicitly marked "Do not translate".
 - Match capitalization and tone with the source English strings.
 - Keep strings concise; avoid truncation in UI.
-- For new locales, mirror the existing folder structure inside `Localization/`.
 
-## Support
-Open an issue with the locale name and a short description of the change needed.
+## Wanna add a new language?
+Open an issue so I can add the necessary files.
