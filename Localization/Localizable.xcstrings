@@ -124,13 +124,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ command sent."
+            "value" : "%@ command sent"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@-kommando sendt."
+            "value" : "%@-kommando sendt"
           }
         }
       }
@@ -682,13 +682,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Command sent successfully!"
+            "value" : "Command sent successfully"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kommando sendt!"
+            "value" : "Kommando sendt"
           }
         }
       }
@@ -4169,13 +4169,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wake-on-LAN sent to %1$@."
+            "value" : "Wake-on-LAN sent to %1$@"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wake-on-LAN sendt til %1$@."
+            "value" : "Wake-on-LAN sendt til %1$@"
           }
         }
       }
@@ -4187,13 +4187,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wake-on-LAN request sent."
+            "value" : "Wake-on-LAN request sent"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wake-on-LAN-forespørsel sendt."
+            "value" : "Wake-on-LAN-forespørsel sendt"
           }
         }
       }
@@ -4231,6 +4231,7 @@
       }
     },
     "by %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "nb" : {
           "stringUnit" : {
@@ -4528,13 +4529,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Delete failed (HTTP %lld)."
+            "value" : "Delete failed (HTTP %lld)"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sletting mislyktes (HTTP %lld)."
+            "value" : "Sletting mislyktes (HTTP %lld)"
           }
         }
       }
@@ -4546,13 +4547,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Failed to load token (HTTP %lld)."
+            "value" : "Failed to load token (HTTP %lld)"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kunne ikke laste token (HTTP %lld)."
+            "value" : "Kunne ikke laste token (HTTP %lld)"
           }
         }
       }
@@ -4564,13 +4565,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bulk signing failed (HTTP %lld)."
+            "value" : "Bulk signing failed (HTTP %lld)"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Masse‑signering mislyktes (HTTP %lld)."
+            "value" : "Masse‑signering mislyktes (HTTP %lld)"
           }
         }
       }
@@ -4582,13 +4583,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Update failed (HTTP %lld)."
+            "value" : "Update failed (HTTP %lld)"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Oppdatering mislyktes (HTTP %lld)."
+            "value" : "Oppdatering mislyktes (HTTP %lld)"
           }
         }
       }
@@ -4600,13 +4601,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invalid API key."
+            "value" : "Invalid API key"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ugyldig API-nøkkel."
+            "value" : "Ugyldig API-nøkkel"
           }
         }
       }
@@ -4618,13 +4619,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invalid base URL."
+            "value" : "Invalid base URL"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ugyldig base-URL."
+            "value" : "Ugyldig base-URL"
           }
         }
       }
@@ -4636,13 +4637,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Missing API key."
+            "value" : "Missing API key"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mangler API-nøkkel."
+            "value" : "Mangler API-nøkkel"
           }
         }
       }
@@ -4654,13 +4655,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add a signing token first."
+            "value" : "Add a signing token first"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Legg til et signeringstoken først."
+            "value" : "Legg til et signeringstoken først"
           }
         }
       }
@@ -4672,13 +4673,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Server rejected the token."
+            "value" : "Server rejected the token"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Serveren avviste tokenet."
+            "value" : "Serveren avviste tokenet"
           }
         }
       }
@@ -6140,6 +6141,16 @@
         }
       }
     },
+    "Enhanced Diagnostics Logging" : {
+      "localizations" : {
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forbedret diagnostisk logging"
+          }
+        }
+      }
+    },
     "Enter new password" : {
       "localizations" : {
         "en" : {
@@ -7452,6 +7463,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oppdaterer agenter…"
+          }
+        }
+      }
+    },
+    "Removes character limits and enables extended logging" : {
+      "localizations" : {
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fjerner tegnbegrensninger og aktiverer utvidet logging"
           }
         }
       }
