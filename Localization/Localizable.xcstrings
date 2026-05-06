@@ -459,6 +459,42 @@
         }
       }
     },
+    "agents.command.cancel" : {
+      "comment" : "Button label to cancel a pending command request.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avbryt"
+          }
+        }
+      }
+    },
+    "agents.command.cancel.note" : {
+      "comment" : "Note explaining that canceling the request does not stop a running command on the agent.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canceling the request does not stop the command if it is already running on the agent."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avbryting av forespørselen stopper ikke kommandoen hvis den allerede kjører på agenten."
+          }
+        }
+      }
+    },
     "agents.command.error.emptyCommand" : {
       "comment" : "Error message when command is empty.",
       "extractionState" : "manual",
