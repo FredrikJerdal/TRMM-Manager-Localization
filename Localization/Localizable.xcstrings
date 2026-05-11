@@ -423,42 +423,6 @@
         }
       }
     },
-    "agents.command.editor.subtitle" : {
-      "comment" : "Subtitle for command editor section.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enter the script to run"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skriv inn skriptet som skal kjøres"
-          }
-        }
-      }
-    },
-    "agents.command.editor.title" : {
-      "comment" : "Title for command editor section.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Command"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kommando"
-          }
-        }
-      }
-    },
     "agents.command.cancel" : {
       "comment" : "Button label to cancel a pending command request.",
       "extractionState" : "manual",
@@ -491,6 +455,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avbryting av forespørselen stopper ikke kommandoen hvis den allerede kjører på agenten."
+          }
+        }
+      }
+    },
+    "agents.command.editor.subtitle" : {
+      "comment" : "Subtitle for command editor section.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the script to run"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv inn skriptet som skal kjøres"
+          }
+        }
+      }
+    },
+    "agents.command.editor.title" : {
+      "comment" : "Title for command editor section.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Command"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kommando"
           }
         }
       }
@@ -6178,6 +6178,7 @@
       }
     },
     "Enhanced Diagnostics Logging" : {
+      "extractionState" : "stale",
       "localizations" : {
         "nb" : {
           "stringUnit" : {
@@ -7504,6 +7505,7 @@
       }
     },
     "Removes character limits and enables extended logging" : {
+      "extractionState" : "stale",
       "localizations" : {
         "nb" : {
           "stringUnit" : {
@@ -10832,13 +10834,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Theme"
+            "value" : "Button Theme"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tema"
+            "value" : "Knapptema"
           }
         }
       }
