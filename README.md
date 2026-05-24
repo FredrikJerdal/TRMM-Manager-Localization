@@ -2,6 +2,10 @@
 
 Localization resources for Tactical RMM Manager. Use this repo to add or update translations in the Xcode string catalog.
 
+## Current Languages
+- English (Collaborator: Fredrik Jerdal)
+- Norwegian (Collaborator: Fredrik Jerdal)
+
 ## Requirements
 - macOS with Xcode installed
 
