@@ -1,7 +1,7 @@
 ---
 name: Localization grammar/spelling report
 about: Report grammar or spelling mistakes in existing translations.
-title: Report Grammar or Spelling Issue in Localization
+title: Reporting Grammar or Spelling Issue in Localization
 labels: ''
 assignees: ''
 
